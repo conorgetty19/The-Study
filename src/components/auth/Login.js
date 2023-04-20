@@ -24,7 +24,7 @@ export const Login = () => {
                     <h3>Please sign in</h3>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username: </label>
-                        <input type="username"
+                        <input type="username" id="inputUsername"
                             value={username}
                             onChange={event => setUsername(event.target.value)}
                             placeholder="Username"
@@ -32,10 +32,12 @@ export const Login = () => {
                     </fieldset>
                     <fieldset>
                         <label htmlFor="inputPassword"> Password: </label>
-                        <input type="password"
+                        <input type="password" id="inputPassword"
+                            autoComplete="new-password"
                             value={password}
                             onChange={event => setPassword(event.target.value)}
-                            placeholder="Password"/>
+                            placeholder="Password"
+                            required/>
                     </fieldset>
                     <fieldset>
                         <button type="submit">
