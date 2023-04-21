@@ -1,5 +1,6 @@
 import { useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
+import { loginPassOrFail } from "../ApiManager"
 
 export const Login = () => {
     //state storage and setters for login functionality
@@ -10,15 +11,19 @@ export const Login = () => {
     //function to handle login event
     //fetch user with matching email and password
     //set study_user in local storage (keeps track of current user)
-
     //navigate user to homepage
+    const handleLogin = (event) => {
+        event.preventDefault()
+
+        loginPassOrFail(username, password, navigate)
+    }
 
     //return a form and link to registration page
     //onsubmit missing for now
     return  (
         <main>
             <section>
-                <form>
+                <form onSubmit={handleLogin}> 
                     <h1>The Study</h1>
                     <h2>Listen. Learn. Repeat.</h2>
                     <h3>Please sign in</h3>
