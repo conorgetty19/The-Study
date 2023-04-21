@@ -4,6 +4,7 @@ import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import './TheStudy.css';
 import { ApplicationViews } from "./views/ApplicationViews";
+import { NavBar } from "./nav/NavBar";
 
 
 //add navbar later
@@ -15,7 +16,7 @@ export const TheStudy = () => {
       <Route path="*" element={
         <Authorized>
           <>
-
+          <NavBar />
           <ApplicationViews />
           </>
         </Authorized>
