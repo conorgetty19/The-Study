@@ -1,4 +1,6 @@
 import { Route, Routes, Outlet } from "react-router-dom"
+import { SubmissionForm } from "../forms/SubmissionForm"
+import { Homepage } from "../uploads/Homepage"
 
 export const ApplicationViews = () => {
     return (
@@ -7,11 +9,12 @@ export const ApplicationViews = () => {
 
                 <>
 
-                <Outlet />
+                    <Outlet />
                 </>
 
             }>
-
+                <Route path="/submissionForm" element={<SubmissionForm />} />
+                <Route path="/" element={<Homepage />} />
             </Route>
         </Routes>
     )
