@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export const Register = (props) => {
@@ -11,41 +11,95 @@ export const Register = (props) => {
     let navigate = useNavigate()
 
     //function to register new user
+    //posts user object, uses response to populate "current user" (aka study user)
+    //navigates user to homepage
+    const registerNewUser = () => {
+        return fetch("http://localhost:8088/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(createdUser => {
+                if (createdUser.hasOwnProperty("id")) {
+                    localStorage.setItem("study_user", JSON.stringify({
+                        id: createdUser.id,
+                        admin: createdUser.isAdmin
+                    }))
+
+                    navigate("/")
+                }
+            })
+    }
 
     //function to handle register event
+    //checks if user with email exists
+    //fix later to check for unique email, username, and password
+    const handleRegister = (e) => {
+        e.preventDefault()
+        return fetch(`http://localhost:8088/users?email=${user.email}`)
+            .then(res => res.json())
+            .then(response => {
+                if (response.length > 0) {
+                    // Duplicate email. No good.
+                    window.alert("Account with that email address already exists")
+                }
+                else {
+                    // Good email, create user.
+                    registerNewUser()
+                }
+            })
+    }
+
+    //function to update user (except checkbox)
+    const updateUser = (evt) => {
+        const copy = {...user}
+        copy[evt.target.id] = evt.target.value
+        setUser(copy)
+    }
 
     return (
         <main>
-            <form>
+            <form onSubmit={handleRegister}>
                 <h1>Registration Form</h1>
                 <fieldset>
                     <label htmlFor="username">Username:</label>
-                    <input type="text" id="username"
-                    placeholder="Enter username"
-                    required 
-                    autoFocus/>
+                    <input onChange={updateUser}
+                        type="text" id="username"
+                        placeholder="Enter username"
+                        required
+                        autoFocus />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="password">Password:</label>
-                    <input type="password" id="password"
-                        placeholder="Password" required/>
+                    <input onChange={updateUser}
+                        type="password" id="password"
+                        placeholder="Password" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email: </label>
-                    <input type="email" id="email"
-                        placeholder="Email address" 
+                    <input onChange={updateUser}
+                        type="email" id="email"
+                        placeholder="Email address"
                         required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="adminStatus">
-                        <input type="checkbox" id="adminStatus" />
+                    <label htmlFor="isAdmin">
+                        <input onChange={(event) => {
+                            const copy = {...user}
+                            copy.isAdmin = event.target.checked
+                            setUser(copy)
+                        }}
+                        type="checkbox" id="isAdmin" />
                         I am an admin
-                        </label>
+                    </label>
                 </fieldset>
                 <fieldset>
-                        <button type="submit">
-                            Register
-                        </button>
+                    <button type="submit">
+                        Register
+                    </button>
                 </fieldset>
             </form>
         </main>
