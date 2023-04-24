@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { checkIfEmail } from "../ApiManager"
 
 export const Register = (props) => {
     const [user, setUser] = useState({
@@ -13,6 +14,7 @@ export const Register = (props) => {
     //function to register new user
     //posts user object, uses response to populate "current user" (aka study user)
     //navigates user to homepage
+    //ADD TO API MANAGER LATER
     const registerNewUser = () => {
         return fetch("http://localhost:8088/users", {
             method: "POST",
@@ -39,18 +41,7 @@ export const Register = (props) => {
     //fix later to check for unique email, username, and password
     const handleRegister = (e) => {
         e.preventDefault()
-        return fetch(`http://localhost:8088/users?email=${user.email}`)
-            .then(res => res.json())
-            .then(response => {
-                if (response.length > 0) {
-                    // Duplicate email. No good.
-                    window.alert("Account with that email address already exists")
-                }
-                else {
-                    // Good email, create user.
-                    registerNewUser()
-                }
-            })
+        checkIfEmail(user.email, registerNewUser)
     }
 
     //function to update user (except checkbox)
