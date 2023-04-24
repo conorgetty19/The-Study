@@ -6,8 +6,6 @@ export const ApplicationViews = () => {
             <Route path="/" element={
 
                 <>
-                <h1>The Study</h1>
-                <div>Listen. Learn. Repeat.</div>
 
                 <Outlet />
                 </>
