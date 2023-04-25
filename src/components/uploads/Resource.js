@@ -6,7 +6,7 @@ export const Resource = ({img, format, description}) => {
 
     return (
         <figure>
-            <img src={img} style={{ width: "30%", height: "43%"}} />
+            <img src={img} style={{ width: "15%", height: "22%"}} />
             <p>{format} description: {description}</p>
             {
                 studyUserObject.admin? 
