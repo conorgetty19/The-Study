@@ -13,7 +13,7 @@ export const SubmissionForm = () => {
         formatId: 0,
         title: "",
         image: "",
-        URL: "",
+        url: "",
         description: "",
         creatorId: studyUserObject.id
     })
@@ -114,15 +114,15 @@ export const SubmissionForm = () => {
                         required/>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="URL">URL</label>
+                    <label htmlFor="url">url</label>
                     <input onChange={updateSubmission}
-                        id="URL"
+                        id="url"
                         type="url"
                         placeholder="www.url.com" 
                         required/>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="image">Image URL</label>
+                    <label htmlFor="image">Image url</label>
                     <input onChange={updateSubmission}
                         id="image"
                         type="url"
