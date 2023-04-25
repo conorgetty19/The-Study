@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-export const Resource = ({ id, title, img, format, description, getAllResources }) => {
+export const Resource = ({ id, creator, title, img, format, description, getAllResources }) => {
     const localStudyUser = localStorage.getItem("study_user")
     const studyUserObject = JSON.parse(localStudyUser)
     const navigate = useNavigate()
@@ -26,7 +26,7 @@ export const Resource = ({ id, title, img, format, description, getAllResources 
             <figcaption>{title}</figcaption>
             <p>{format} description: {description}</p>
             {
-                studyUserObject.admin ?
+                studyUserObject.admin || studyUserObject.id === creator ?
                     <>
                         <button onClick={() => navigateUserToEditForm(id)}>Edit</button>
                         <button onClick={(clickEvent) => deleteResourceClickEvent(clickEvent)}>Delete</button>
