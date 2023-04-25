@@ -1,9 +1,9 @@
-
+import { useNavigate } from "react-router-dom"
 
 export const Resource = ({ id, img, format, description, getAllResources }) => {
     const localStudyUser = localStorage.getItem("study_user")
     const studyUserObject = JSON.parse(localStudyUser)
-
+    const navigate = useNavigate()
 
 
     const deleteResourceClickEvent = () => {
@@ -15,6 +15,10 @@ export const Resource = ({ id, img, format, description, getAllResources }) => {
             ])
     }
 
+    const navigateUserToEditForm = (id) => {
+        navigate(`/editForm/${id}`)
+    }
+
 
     return (
         <figure>
@@ -23,7 +27,7 @@ export const Resource = ({ id, img, format, description, getAllResources }) => {
             {
                 studyUserObject.admin ?
                     <>
-                        <button>Edit</button>
+                        <button onClick={() => navigateUserToEditForm(id)}>Edit</button>
                         <button onClick={(clickEvent) => deleteResourceClickEvent(clickEvent)}>Delete</button>
                     </>
                     : ""
