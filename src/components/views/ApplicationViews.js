@@ -3,6 +3,7 @@ import { SubmissionForm } from "../forms/SubmissionForm"
 import { Homepage } from "../uploads/Homepage"
 import { CategoryResources } from "../uploads/CategoryResources"
 import { EditForm } from "../forms/EditForm"
+import { MyUploads } from "../uploads/MyUploads"
 
 export const ApplicationViews = () => {
     return (
@@ -18,7 +19,8 @@ export const ApplicationViews = () => {
                 <Route path="/submissionForm" element={<SubmissionForm />} />
                 <Route path="/" element={<Homepage />} />
                 <Route path="category/:categoryId" element={< CategoryResources/>} />  
-                <Route path="editForm/:resourceId" element={< EditForm/>} />  
+                <Route path="editForm/:resourceId" element={< EditForm/>} /> 
+                <Route path="/uploads" element={<MyUploads/>} />
             </Route>
         </Routes>
     )
