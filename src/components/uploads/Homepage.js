@@ -19,10 +19,10 @@ export const Homepage = () => {
 
     return (
         <main>
-            <h1>Reserach Categories</h1>
+            <h1>Research Categories</h1>
             <div>
             {categories.map((category) => {
-                return <Link to={`/category/${category.id}`} key={category.id} id={category.id}>{category.type}</Link>
+                return <Link to={`/category/${category.id}`} key={category.id} id={category.id}>Category {category.id}: {category.type}</Link>
             })}
             </div>
         </main>

@@ -12,7 +12,7 @@ export const SubmissionForm = () => {
         categoryId: 0,
         formatId: 0,
         title: "",
-        imageURL: "",
+        image: "",
         URL: "",
         description: "",
         creatorId: studyUserObject.id
@@ -122,9 +122,9 @@ export const SubmissionForm = () => {
                         required/>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="imageURL">Image URL</label>
+                    <label htmlFor="image">Image URL</label>
                     <input onChange={updateSubmission}
-                        id="imageURL"
+                        id="image"
                         type="url"
                         placeholder="www.image.com" 
                         required/>
@@ -135,7 +135,8 @@ export const SubmissionForm = () => {
                         id="description" rows="4" cols="50"
                         placeholder="Type a brief description of your resource"
                         style={{ resize: 'none' }} 
-                        required></textarea>
+                        required
+                        maxLength="208"></textarea>
                 </fieldset>
                 <fieldset>
                     <button type="submit">
