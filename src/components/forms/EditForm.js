@@ -58,7 +58,7 @@ export const EditForm = () => {
 
     //submits new submission and navigates user back to home page
     const submitAlteredResource = () => {
-        return fetch("http://localhost:8088/resources", {
+        return fetch(`http://localhost:8088/resources/${resourceId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -95,7 +95,7 @@ export const EditForm = () => {
                 <fieldset>
                     <label htmlFor="formatId">Format</label>
                     <select
-                        defaultValue={submission.formatId}
+                        value={submission.formatId}
                         id="formatId"
                         required
                         onChange={updateSubmissionNumber}>
@@ -111,7 +111,7 @@ export const EditForm = () => {
                 <fieldset>
                     <label htmlFor="categoryId">Category</label>
                     <select
-                        defaultValue={submission.categoryId}
+                        value={submission.categoryId}
                         id="categoryId"
                         required
                         onChange={updateSubmissionNumber}>

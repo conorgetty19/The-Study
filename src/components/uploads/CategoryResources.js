@@ -29,6 +29,7 @@ export const CategoryResources = () => {
                     resources.map((resource) => <Resource 
                     key={resource.id} 
                     id={resource.id}
+                    title={resource.title}
                     img={resource.image}
                     format={resource?.format?.type}
                     description={resource.description}

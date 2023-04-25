@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 
-export const Resource = ({ id, img, format, description, getAllResources }) => {
+export const Resource = ({ id, title, img, format, description, getAllResources }) => {
     const localStudyUser = localStorage.getItem("study_user")
     const studyUserObject = JSON.parse(localStudyUser)
     const navigate = useNavigate()
@@ -23,6 +23,7 @@ export const Resource = ({ id, img, format, description, getAllResources }) => {
     return (
         <figure>
             <img src={img} style={{ width: "15%", height: "22%" }} />
+            <figcaption>{title}</figcaption>
             <p>{format} description: {description}</p>
             {
                 studyUserObject.admin ?
