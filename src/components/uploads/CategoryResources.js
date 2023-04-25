@@ -6,13 +6,17 @@ export const CategoryResources = () => {
     const { categoryId } = useParams()
     const [resources, updateResources] = useState([])
 
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/resources?categoryId=${categoryId}&_expand=format`)
+    const getAllResources = () => {
+        fetch(`http://localhost:8088/resources?categoryId=${categoryId}&_expand=format`)
                 .then(res => res.json())
                 .then((resourcesArray) => {
                     updateResources(resourcesArray)
                 })
+    }
+
+    useEffect(
+        () => {
+            getAllResources()
         },
         []
     )
@@ -24,9 +28,11 @@ export const CategoryResources = () => {
                 {
                     resources.map((resource) => <Resource 
                     key={resource.id} 
+                    id={resource.id}
                     img={resource.image}
                     format={resource?.format?.type}
                     description={resource.description}
+                    getAllResources={getAllResources}
                     />)
                 }
             </article>
