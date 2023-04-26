@@ -24,11 +24,12 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
         <figure>
             <img src={img} style={{ width: "15%", height: "22%" }} />
             <figcaption>{title}</figcaption>
-            <a href={link}>{format} description: {description}</a>
+            <a href={link}>{format} Link</a>
+            <p>Description: {description}</p>
             {
                 studyUserObject.admin || studyUserObject.id === creator ?
                     <>
-                        <br /><button onClick={() => navigateUserToEditForm(id)}>Edit</button>
+                        <button onClick={() => navigateUserToEditForm(id)}>Edit</button>
                         <button onClick={(clickEvent) => deleteResourceClickEvent(clickEvent)}>Delete</button>
                     </>
                     : ""

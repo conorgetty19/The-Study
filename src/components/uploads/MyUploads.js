@@ -27,6 +27,7 @@ export const MyUploads = () => {
             <h1>My Uploads</h1>
             <article>
                 {
+                    resources.length === 0? <p>Your uploads will appear here. Submit new learning resources to see this page filled!</p> :
                     resources.map((resource) => <Resource
                         key={resource.id}
                         id={resource.id}
