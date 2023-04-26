@@ -76,7 +76,7 @@ export const SubmissionForm = () => {
     return (
         <main>
             <form onSubmit={handleSubmission}>
-                <h1>Resource Submission Form</h1>
+                <h1>Upload Submission Form</h1>
                 <fieldset>
                     <label htmlFor="formatId">Format</label>
                     <select id="formatId" 
@@ -114,15 +114,15 @@ export const SubmissionForm = () => {
                         required/>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="url">url</label>
+                    <label htmlFor="url">URL</label>
                     <input onChange={updateSubmission}
                         id="url"
                         type="url"
-                        placeholder="www.url.com" 
+                        placeholder="https://www.url.com" 
                         required/>
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="image">Image url</label>
+                    <label htmlFor="image">Image URL</label>
                     <input onChange={updateSubmission}
                         id="image"
                         type="url"
