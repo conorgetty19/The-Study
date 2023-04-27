@@ -54,6 +54,7 @@ export const Register = (props) => {
     return (
         <main>
             <form onSubmit={handleRegister}>
+                <h2 className="custom-text-green-withoutHover">TS</h2>
                 <h1>Registration Form</h1>
                 <fieldset>
                     <label htmlFor="username">Username:</label>
@@ -88,7 +89,7 @@ export const Register = (props) => {
                     </label>
                 </fieldset>
                 <fieldset>
-                    <button type="submit">
+                    <button className="btn btn-secondary" type="submit">
                         Register
                     </button>
                 </fieldset>

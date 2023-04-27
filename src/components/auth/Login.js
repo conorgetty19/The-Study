@@ -20,13 +20,13 @@ export const Login = () => {
 
     //return a form and link to registration page
     //onsubmit missing for now
-    return  (
+    return (
         <main>
+            <h1 className="custom-text-green-withoutHover">The Study</h1>
+            <h2 className="h6" >Listen. Learn. Repeat.</h2>
             <section>
-                <form onSubmit={handleLogin}> 
-                    <h1>The Study</h1>
-                    <h2>Listen. Learn. Repeat.</h2>
-                    <h3>Please sign in</h3>
+                <form onSubmit={handleLogin}>
+                    <h3 className="h4">Please sign in</h3>
                     <fieldset>
                         <label htmlFor="inputUsername"> Username: </label>
                         <input type="username" id="inputUsername"
@@ -42,17 +42,15 @@ export const Login = () => {
                             value={password}
                             onChange={event => setPassword(event.target.value)}
                             placeholder="Password"
-                            required/>
+                            required />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="btn btn-secondary" type="submit">
                             Sign in
                         </button>
+                        <Link className="custom-text-green" to="/register">Not a member yet?</Link>
                     </fieldset>
-                </form> 
-            </section>
-            <section>
-                <Link to="/register">Not a member yet?</Link>
+                </form>
             </section>
         </main>
     )

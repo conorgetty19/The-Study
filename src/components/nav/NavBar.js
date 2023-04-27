@@ -6,21 +6,21 @@ export const NavBar = () => {
 
     return (
         <>
-            <h1>TS</h1>
+            <h1 className="custom-text-green-withoutHover">TS</h1>
             <nav>
                 <li>
-                    <Link to="/">Homepage</Link>
+                    <Link className="custom-text-green" to="/">Homepage</Link>
                 </li>
                 <li>
-                    <Link to="/uploads">My Uploads</Link>
+                    <Link className="custom-text-green" to="/uploads">My Uploads</Link>
                 </li>
                 <li>
-                    <Link to="/submissionForm">Upload Form</Link>
+                    <Link className="custom-text-green" to="/submissionForm">Upload Form</Link>
                 </li>
                 {
                     localStorage.getItem("study_user")
                         ? <li>
-                            <Link to="" onClick={() => {
+                            <Link className="custom-text-green" to="" onClick={() => {
                                 localStorage.removeItem("study_user")
                                 navigate("/", { replace: true })
                             }}>Logout</Link>
