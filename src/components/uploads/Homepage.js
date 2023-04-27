@@ -22,7 +22,7 @@ export const Homepage = () => {
             <h1>Research Categories</h1>
             <div>
             {categories.map((category) => {
-                return <div key={category.id}><Link to={`/category/${category.id}`} id={category.id}>Category {category.id}: {category.type}</Link><br/></div>
+                return <div key={category.id}><Link className="custom-text-green" to={`/category/${category.id}`} id={category.id}>Category {category.id}: {category.type}</Link><br/></div>
             })}
             </div>
         </main>

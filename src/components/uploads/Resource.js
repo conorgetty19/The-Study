@@ -21,20 +21,21 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
 
 
     return (
-        <figure>
-            <img src={img} style={{ width: "15%", height: "22%" }} />
-            <figcaption>{title}</figcaption>
-            <a href={link}>{format} Link</a>
-            <p>Description: {description}</p>
+        <section>
+            <figure>
+                <img src={img} style={{ width: "15%", height: "22%" }} />
+                <figcaption><a className="custom-text-green" href={link}>{title} </a></figcaption>
+            </figure>
+            <p>{format} Description: {description}</p>
             {
                 studyUserObject.admin || studyUserObject.id === creator ?
                     <>
-                        <button onClick={() => navigateUserToEditForm(id)}>Edit</button>
-                        <button onClick={(clickEvent) => deleteResourceClickEvent(clickEvent)}>Delete</button>
+                        <button className="btn btn-secondary" onClick={() => navigateUserToEditForm(id)}>Edit</button>
+                        <button className="btn btn-secondary" onClick={(clickEvent) => deleteResourceClickEvent(clickEvent)}>Delete</button>
                     </>
                     : ""
 
             }
-        </figure>
+        </section>
     )
 }

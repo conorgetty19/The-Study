@@ -139,7 +139,7 @@ export const SubmissionForm = () => {
                         maxLength="208"></textarea>
                 </fieldset>
                 <fieldset>
-                    <button type="submit">
+                    <button className="btn btn-secondary" type="submit">
                         Submit
                     </button>
                 </fieldset>

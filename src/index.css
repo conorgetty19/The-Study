@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-text-green {
+  color: #35FF23;
+}
+
+.custom-text-green:hover {
+  color: #2EBD1F;
+}
+
+.custom-text-green-withoutHover {
+  color: #35FF23;
+}
