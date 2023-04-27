@@ -21,11 +21,12 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
 
 
     return (
-        <figure>
-            <img src={img} style={{ width: "15%", height: "22%" }} />
-            <figcaption>{title}</figcaption>
-            <a href={link}>{format} Link</a>
-            <p>Description: {description}</p>
+        <section>
+            <figure>
+                <img src={img} style={{ width: "15%", height: "22%" }} />
+                <figcaption><a href={link}>{title} </a></figcaption>
+            </figure>
+            <p>{format} Description: {description}</p>
             {
                 studyUserObject.admin || studyUserObject.id === creator ?
                     <>
@@ -35,6 +36,6 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
                     : ""
 
             }
-        </figure>
+        </section>
     )
 }

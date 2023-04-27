@@ -7,7 +7,7 @@ export const NavBar = () => {
     return (
         <>
             <h1>TS</h1>
-            <ul>
+            <nav>
                 <li>
                     <Link to="/">Homepage</Link>
                 </li>
@@ -27,7 +27,7 @@ export const NavBar = () => {
                         </li>
                         : ""
                 }
-            </ul>
+            </nav>
         </>
     )
 }
