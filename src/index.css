@@ -42,11 +42,11 @@ code {
   width: 100%;
   padding-left: 2vw;
   padding-top: 2vw;
-  border: 5px dashed red;
+  /* border: 5px dashed red; */
 }
 
 .login-tag {
-  border: 5px dotted red;
+  /* border: 5px dotted red; */
   align-self: flex-end;
   margin-bottom: 10rem;
   margin-right: auto;
@@ -55,56 +55,59 @@ code {
 }
 
 .login{
-  border: 5px solid red;
+  /* border: 5px solid red; */
   height: 100vh;
   width: 100vw;
 }
 
 .login-form{
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   height: 37%;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .login-form-title{
-  border: 5px solid green;
+  /* border: 5px solid green; */
   margin-top: 0px;
   margin: 1rem;
 }
 
 .login-form-usernameField{
-  border: 5px dotted green;
+  /* border: 5px dotted green; */
   margin-top: 0px;
   margin: 1rem;
 }
 
 .login-form-passwordField {
-  border: 5px ridge green;
+  /* border: 5px ridge green; */
   margin-top: 0px;
   margin: 1rem;
 }
 
 .login-form-buttonAndLink {
-  border: 5px dashed green;
+  width: 20rem;
+  /* border: 5px dashed green; */
+  margin: 1rem;
 }
 
 .login-form-button {
-  border: 5px dotted cyan;
+  /* border: 5px dotted cyan; */
 }
 
 .login-form-link {
-  border: 5px solid cyan;
+  /* border: 5px solid cyan; */
   font-size: small;
   margin-left: 2rem;
-  padding-right: 0px;
+  padding-top: 0.5rem;
 }
 
 .login-p{
-  border: 5px dotted blue;
+  /* border: 5px dotted blue; */
   width: 100%;
   max-height: 9rem;
-  padding-right: 5vw;
-  padding-left: 5vw;
+  padding-right: 10vw;
+  padding-left: 10vw;
   text-align: center;
+  margin-top: 3rem;
 }
