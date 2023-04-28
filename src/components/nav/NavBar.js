@@ -6,8 +6,8 @@ export const NavBar = () => {
 
     return (
         <>
-            <h1 className="custom-text-green-withoutHover">TS</h1>
-            <nav>
+            <h1 className="custom-text-green-withoutHover general-font">TS</h1>
+            <nav className="general-font">
                 <li>
                     <Link className="custom-text-green" to="/">Homepage</Link>
                 </li>

@@ -34,7 +34,7 @@ export const CategoryResources = () => {
     )
 
     return (
-        <main>
+        <main className="general-font">
             <h1>{category?.type}</h1>
             <article>
                 {

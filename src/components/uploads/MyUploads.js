@@ -23,7 +23,7 @@ export const MyUploads = () => {
 
 
     return (
-        <main>
+        <main className="general-font">
             <h1>My Uploads</h1>
             <article>
                 {

@@ -74,7 +74,7 @@ export const SubmissionForm = () => {
     }
 
     return (
-        <main>
+        <main className="general-font">
             <form onSubmit={handleSubmission}>
                 <h1>Upload Submission Form</h1>
                 <fieldset>

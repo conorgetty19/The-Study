@@ -21,13 +21,16 @@ export const Login = () => {
     //return a form and link to registration page
     //onsubmit missing for now
     return (
-        <main>
-            <h1 className="custom-text-green-withoutHover">The Study</h1>
-            <h2 className="h6" >Listen. Learn. Repeat.</h2>
-            <section>
+        <main className="d-flex-column justify-content-around login">
+            <div className="login-titleAndTag">
+                <h1 className="custom-text-green-withoutHover login-title-font">The Study</h1>
+                <h2 className="h6 login-tag" >Listen. Learn. Repeat.</h2>
+            </div>
+            <p className="login-p">The Study is a digital library for free, quality learning resources. Users can access and upload links to lectures, podcasts, literature, and more.</p>
+            <section className="general-font login-form d-flex justify-content-center">
                 <form onSubmit={handleLogin}>
-                    <h3 className="h4">Please sign in</h3>
-                    <fieldset>
+                    <h3 className="h4 login-form-title">Sign in</h3>
+                    <fieldset className="login-form-usernameField d-flex justify-content-between">
                         <label htmlFor="inputUsername"> Username: </label>
                         <input type="username" id="inputUsername"
                             value={username}
@@ -35,7 +38,7 @@ export const Login = () => {
                             placeholder="Username"
                             required autoFocus />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="login-form-passwordField d-flex justify-content-between">
                         <label htmlFor="inputPassword"> Password: </label>
                         <input type="password" id="inputPassword"
                             autoComplete="new-password"
@@ -44,11 +47,11 @@ export const Login = () => {
                             placeholder="Password"
                             required />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="login-form-buttonAndLink d-flex justify-content-between">
                         <button className="btn btn-secondary" type="submit">
                             Sign in
                         </button>
-                        <Link className="custom-text-green" to="/register">Not a member yet?</Link>
+                        <Link className="custom-text-green login-form-link" to="/register">Not a member yet?</Link>
                     </fieldset>
                 </form>
             </section>
