@@ -18,7 +18,7 @@ export const Homepage = () => {
     )
 
     return (
-        <main>
+        <main className="general-font">
             <h1>Research Categories</h1>
             <div>
             {categories.map((category) => {

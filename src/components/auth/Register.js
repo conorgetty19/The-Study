@@ -52,7 +52,7 @@ export const Register = (props) => {
     }
 
     return (
-        <main>
+        <main className="general-font">
             <form onSubmit={handleRegister}>
                 <h2 className="custom-text-green-withoutHover">TS</h2>
                 <h1>Registration Form</h1>

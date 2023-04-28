@@ -21,13 +21,16 @@ export const Login = () => {
     //return a form and link to registration page
     //onsubmit missing for now
     return (
-        <main>
-            <h1 className="custom-text-green-withoutHover">The Study</h1>
-            <h2 className="h6" >Listen. Learn. Repeat.</h2>
-            <section>
+        <main className="d-flex-column justify-content-around login">
+            <div className="login-titleAndTag">
+                <h1 className="custom-text-green-withoutHover login-title-font">The Study</h1>
+                <h2 className="h6 login-tag" >Listen. Learn. Repeat.</h2>
+            </div>
+            <p className="login-p">The Study is a digital library for free, quality learning resources. Users can upload links to, and access, lectures, podcasts, literature, and more.</p>
+            <section className="general-font align-self-center login-form d-flex justify-content-center">
                 <form onSubmit={handleLogin}>
-                    <h3 className="h4">Please sign in</h3>
-                    <fieldset>
+                    <h3 className="h4 login-form-title">Sign in</h3>
+                    <fieldset className="login-form-usernameField">
                         <label htmlFor="inputUsername"> Username: </label>
                         <input type="username" id="inputUsername"
                             value={username}
@@ -35,7 +38,7 @@ export const Login = () => {
                             placeholder="Username"
                             required autoFocus />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="login-form-passwordField">
                         <label htmlFor="inputPassword"> Password: </label>
                         <input type="password" id="inputPassword"
                             autoComplete="new-password"
@@ -44,11 +47,11 @@ export const Login = () => {
                             placeholder="Password"
                             required />
                     </fieldset>
-                    <fieldset>
-                        <button className="btn btn-secondary" type="submit">
+                    <fieldset className="login-form-buttonAndLink">
+                        <button className="btn btn-secondary login-form-button" type="submit">
                             Sign in
                         </button>
-                        <Link className="custom-text-green" to="/register">Not a member yet?</Link>
+                        <Link className="custom-text-green login-form-link" to="/register">Not a member yet?</Link>
                     </fieldset>
                 </form>
             </section>
