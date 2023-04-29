@@ -91,7 +91,7 @@ export const EditForm = () => {
     return (
         <main className="general-font">
             <form onSubmit={handleSubmission}>
-                <h1>Rersource Edit Form</h1>
+                <h1>Resource Edit Form</h1>
                 <fieldset>
                     <label htmlFor="formatId">Format</label>
                     <select
