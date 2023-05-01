@@ -36,6 +36,10 @@ code {
   background-color: black;
 }
 
+.active-tab {
+  background-color: #28242c;
+}
+
 /* Login and registration pages */
 .login-title-font{
   font-family: 'Great Vibes', cursive;
