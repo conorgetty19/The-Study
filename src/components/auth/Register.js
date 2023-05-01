@@ -54,7 +54,7 @@ export const Register = (props) => {
     return (
         <main className="general-font">
             <form onSubmit={handleRegister}>
-                <h2 className="custom-text-green-withoutHover">TS</h2>
+                <h2 className="fs-1 text custom-text-green-withoutHover general-font">TS</h2>
                 <h1>Registration Form</h1>
                 <fieldset>
                     <label htmlFor="username">Username:</label>

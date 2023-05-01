@@ -6,28 +6,34 @@ export const NavBar = () => {
 
     return (
         <>
-            <h1 className="custom-text-green-withoutHover general-font">TS</h1>
-            <nav className="general-font">
-                <li>
-                    <Link className="custom-text-green" to="/">Homepage</Link>
+            <ul className="general-font nav nav-tabs background-black d-flex justify-content-between">
+                <li className="fs-1 text custom-text-green-withoutHover general-font">TS</li>
+                <li className="nav-item">
+                    <div className="nav-link">
+                        <Link className=" custom-text-green fs-4" to="/">Homepage</Link>
+                    </div>
                 </li>
-                <li>
-                    <Link className="custom-text-green" to="/uploads">My Uploads</Link>
+                <li className="nav-item">
+                    <div className="nav-link">
+                        <Link className="custom-text-green fs-4" to="/uploads">My Uploads</Link>
+                    </div>
                 </li>
-                <li>
-                    <Link className="custom-text-green" to="/submissionForm">Upload Form</Link>
+                <li className="nav-item">
+                    <div className="nav-link">
+                        <Link className="custom-text-green fs-4" to="/submissionForm">Upload Form</Link>
+                    </div>
                 </li>
                 {
                     localStorage.getItem("study_user")
-                        ? <li>
-                            <Link className="custom-text-green" to="" onClick={() => {
+                        ? <div className="nav-link"><li className="nav-item">
+                            <Link className="custom-text-green fs-4" to="" onClick={() => {
                                 localStorage.removeItem("study_user")
                                 navigate("/", { replace: true })
                             }}>Logout</Link>
-                        </li>
+                        </li></div>
                         : ""
                 }
-            </nav>
+            </ul>
         </>
     )
 }
