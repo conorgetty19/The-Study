@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import "./Homepage.css"
 import { useNavigate, Link } from "react-router-dom"
 
 export const Homepage = () => {
@@ -18,9 +17,9 @@ export const Homepage = () => {
     )
 
     return (
-        <main className="general-font">
+        <main className="general-font homepage-content">
             <h1>Research Categories</h1>
-            <div>
+            <div className=" homepage-category d-flex flex-column justify-content-between">
             {categories.map((category) => {
                 return <div key={category.id}><Link className="custom-text-green" to={`/category/${category.id}`} id={category.id}>Category {category.id}: {category.type}</Link><br/></div>
             })}

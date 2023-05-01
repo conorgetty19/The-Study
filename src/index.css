@@ -103,3 +103,17 @@ code {
   text-align: center;
   margin-top: 3rem;
 }
+
+/* Home Page */
+
+.homepage-content{
+  /* border: 5px solid red; */
+  margin-top: 4rem;
+  margin-left: 4rem;
+  height: 25rem;
+}
+
+.homepage-category{
+  /* border: 5px dotted red; */
+  height: 21rem;
+}
