@@ -15,7 +15,7 @@ code {
     monospace;
 }
 
-/* generals (apply to most or all components) */
+/* generals (apply to most or all components/pages) */
 .custom-text-green {
   color: #35FF23;
 }
@@ -32,6 +32,10 @@ code {
   font-family: 'Space Mono', monospace;
 }
 
+.background-black {
+  background-color: black;
+}
+
 /* Login and registration pages */
 .login-title-font{
   font-family: 'Great Vibes', cursive;
@@ -42,11 +46,9 @@ code {
   width: 100%;
   padding-left: 2vw;
   padding-top: 2vw;
-  /* border: 5px dashed red; */
 }
 
 .login-tag {
-  /* border: 5px dotted red; */
   align-self: flex-end;
   margin-bottom: 10rem;
   margin-right: auto;
@@ -55,55 +57,45 @@ code {
 }
 
 .login{
-  /* border: 5px solid red; */
   height: 100vh;
   width: 100vw;
 }
 
 .login-form{
-  /* border: 5px solid blue; */
   height: 37%;
   width: 100%;
   margin-top: 3rem;
 }
 
 .login-form-title{
-  /* border: 5px solid green; */
   margin-top: 0px;
   margin: 1rem;
 }
 
 .login-form-usernameField{
-  /* border: 5px dotted green; */
   margin-top: 0px;
   margin: 1rem;
 }
 
 .login-form-passwordField {
-  /* border: 5px ridge green; */
   margin-top: 0px;
   margin: 1rem;
 }
 
 .login-form-buttonAndLink {
   width: 20rem;
-  /* border: 5px dashed green; */
   margin: 1rem;
 }
 
-.login-form-button {
-  /* border: 5px dotted cyan; */
-}
+
 
 .login-form-link {
-  /* border: 5px solid cyan; */
   font-size: small;
   margin-left: 2rem;
   padding-top: 0.5rem;
 }
 
 .login-p{
-  /* border: 5px dotted blue; */
   width: 100%;
   max-height: 9rem;
   padding-right: 10vw;
