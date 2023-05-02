@@ -132,11 +132,11 @@ export const SubmissionForm = () => {
                 <fieldset>
                     <label htmlFor="description">Description</label>
                     <textarea onChange={updateSubmission}
-                        id="description" rows="4" cols="50"
+                        id="description" rows="3" cols="35"
                         placeholder="Type a brief description of your resource"
                         style={{ resize: 'none' }} 
                         required
-                        maxLength="208"></textarea>
+                        maxLength="105"></textarea>
                 </fieldset>
                 <fieldset>
                     <button className="btn btn-secondary" type="submit">
