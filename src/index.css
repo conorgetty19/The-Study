@@ -40,6 +40,19 @@ code {
   background-color: #28242c;
 }
 
+.resource {
+  width: 18rem;
+  margin: 4rem;
+  padding: 1rem;
+}
+
+.card-img{
+  /* border: 3px dotted red; */
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 0.5rem;
+}
+
 /* Login and registration pages */
 .login-title-font{
   font-family: 'Great Vibes', cursive;

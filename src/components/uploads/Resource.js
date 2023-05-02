@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom"
+import { Collapse } from 'bootstrap';
+import { useRef } from "react";
+import { useEffect } from "react";
 
 export const Resource = ({ id, link, creator, title, img, format, description, getAllResources }) => {
     const localStudyUser = localStorage.getItem("study_user")
@@ -19,23 +22,40 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
         navigate(`/editForm/${id}`)
     }
 
+    const collapsibleElement = useRef(null);
+
+    useEffect(() => {
+        new Collapse(collapsibleElement.current);
+    }, []);
+
 
     return (
-        <section>
-            <figure>
-                <img src={img} style={{ width: "15%", height: "22%" }} />
-                <figcaption><a className="custom-text-green" href={link}>{title} </a></figcaption>
-            </figure>
-            <p>{format} Description: {description}</p>
-            {
-                studyUserObject.admin || studyUserObject.id === creator ?
-                    <>
-                        <button className="btn btn-secondary" onClick={() => navigateUserToEditForm(id)}>Edit</button>
-                        <button className="btn btn-secondary" onClick={(clickEvent) => deleteResourceClickEvent(clickEvent)}>Delete</button>
-                    </>
-                    : ""
+        <div >
+            <section className="card bg-secondary mb-3 resource" style={{ width: "20rem", height: "23rem" }}>
+                <div className="btn btn-dark card-title">
+                    <a className="custom-text-green-withoutHover" href={link}>{title}</a>
+                </div>
+                <img src={img} className="card-img" style={{ width: "auto", height: "4rem", objectFit: "cover" }} />
+                <button type="button" className="btn btn-dark" data-bs-toggle="collapse" data-bs-target={`#collapse${id}`}>
+                    {format} Description
+                </button>
+                    <div className="collapse show" id={`collapse${id}`} ref={collapsibleElement}>
+                        <div className="card-text">
+                            {description}
+                        </div>
+                    </div>
+                <div className="card-body">
+                </div>
+                {
+                    studyUserObject.admin || studyUserObject.id === creator ?
+                        <div className="d-flex justify-content-between">
+                            <button className="btn btn-dark" onClick={() => navigateUserToEditForm(id)}>Edit</button>
+                            <button className="btn btn-dark" onClick={(clickEvent) => deleteResourceClickEvent(clickEvent)}>Delete</button>
+                        </div>
+                        : ""
 
-            }
-        </section>
+                }
+            </section>
+        </div>
     )
 }
