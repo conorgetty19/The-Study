@@ -4,7 +4,7 @@ import { Resource } from "./Resource"
 export const MyUploads = () => {
     const localStudyUser = localStorage.getItem("study_user")
     const studyUserObject = JSON.parse(localStudyUser)
-    const [resources, updateResources] = useState([])
+    const [resources, updateResources] = useState(["fakedata"])
 
     const getMyResources = () => {
         fetch(`http://localhost:8088/resources?_expand=format&creatorId=${studyUserObject.id}`)
