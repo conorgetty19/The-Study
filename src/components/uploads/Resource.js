@@ -31,12 +31,12 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
 
     return (
         <div >
-            <section className="card bg-secondary mb-3 resource" style={{ width: "20rem", height: "21.85rem" }}>
+            <section className="card bg-secondary mb-3 resource" style={{ width: "20rem", height: "22rem" }}>
                 <div className="d-flex justify-content-between">
-                    <div className="btn btn-dark card-title d-flex align-items-center" style={{height: "5rem"}}>
+                    <div className="btn btn-dark card-title d-flex align-items-center" style={{height: "6rem", width: "auto"}}>
                         <a className="custom-text-green-withoutHover" href={link}>{title}</a>
                     </div>
-                    <img src={img} className="card-img" style={{ width: "5rem", height: "auto", objectFit: "scale-down" }} />
+                    <img src={img} className="card-img" style={{ maxWidth: "9rem", width: "auto", maxHeight: "6rem", objectFit: "scale-down" }} />
                 </div>
                 <button type="button" className="btn btn-dark" data-bs-toggle="collapse" data-bs-target={`#collapse${id}`}>
                     {format} Description
