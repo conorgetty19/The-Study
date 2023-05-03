@@ -4,7 +4,7 @@ import { Resource } from "./Resource"
 
 export const CategoryResources = () => {
     const { categoryId } = useParams()
-    const [resources, updateResources] = useState([])
+    const [resources, updateResources] = useState(["fakedata"])
     const [category, setCategory] = useState({
         id: 0,
         type: "",
