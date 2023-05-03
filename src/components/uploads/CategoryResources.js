@@ -40,7 +40,7 @@ export const CategoryResources = () => {
                 {
                     resources.length === 0 ? <p>Uploads will appear here. Submit new learning resources to see this page filled!</p> :
                         resources.map((resource) => <Resource
-                            key={resource.id}
+                            key={`resource-${resource.id}`}
                             id={resource.id}
                             link={resource.url}
                             creator={resource.creatorId}
