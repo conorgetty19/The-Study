@@ -42,7 +42,9 @@ code {
 
 .resource {
   width: 18rem;
-  margin: 4rem;
+  margin-left: 0rem;
+  margin-right: 4rem;
+  margin-top: 4rem;
   padding: 1rem;
 }
 
@@ -51,6 +53,12 @@ code {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   padding: 0.5rem;
+}
+
+.page-content{
+  margin-top: 4rem;
+  margin-left: 4rem;
+  height: 25rem;
 }
 
 /* Login and registration pages */
@@ -142,12 +150,8 @@ code {
 
 /* Home Page */
 
-.homepage-content{
-  margin-top: 4rem;
-  margin-left: 4rem;
-  height: 25rem;
-}
-
 .homepage-category{
   height: 21rem;
 }
+
+/* My Uploads Page*/

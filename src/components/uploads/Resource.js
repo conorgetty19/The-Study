@@ -31,19 +31,21 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
 
     return (
         <div >
-            <section className="card bg-secondary mb-3 resource" style={{ width: "20rem", height: "23rem" }}>
-                <div className="btn btn-dark card-title">
-                    <a className="custom-text-green-withoutHover" href={link}>{title}</a>
+            <section className="card bg-secondary mb-3 resource" style={{ width: "20rem", height: "21.85rem" }}>
+                <div className="d-flex justify-content-between">
+                    <div className="btn btn-dark card-title d-flex align-items-center" style={{height: "5rem"}}>
+                        <a className="custom-text-green-withoutHover" href={link}>{title}</a>
+                    </div>
+                    <img src={img} className="card-img" style={{ width: "5rem", height: "auto", objectFit: "scale-down" }} />
                 </div>
-                <img src={img} className="card-img" style={{ width: "auto", height: "4rem", objectFit: "cover" }} />
                 <button type="button" className="btn btn-dark" data-bs-toggle="collapse" data-bs-target={`#collapse${id}`}>
                     {format} Description
                 </button>
-                    <div className="collapse show" id={`collapse${id}`} ref={collapsibleElement}>
-                        <div className="card-text">
-                            {description}
-                        </div>
+                <div className="collapse show" id={`collapse${id}`} ref={collapsibleElement}>
+                    <div className="card-text">
+                        {description}
                     </div>
+                </div>
                 <div className="card-body">
                 </div>
                 {
