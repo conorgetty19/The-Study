@@ -17,7 +17,7 @@ export const Homepage = () => {
     )
 
     return (
-        <main className="general-font homepage-content">
+        <main className="general-font page-content">
             <h1>Research Categories</h1>
             <div className=" homepage-category d-flex flex-column justify-content-between">
             {categories.map((category) => {

@@ -23,9 +23,9 @@ export const MyUploads = () => {
 
 
     return (
-        <main className="general-font">
+        <main className="general-font page-content">
             <h1>My Uploads</h1>
-            <article>
+            <article className="d-flex justify-content-between flex-wrap">
                 {
                     resources.length === 0? <p>Your uploads will appear here. Submit new learning resources to see this page filled!</p> :
                     resources.map((resource) => <Resource
