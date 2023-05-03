@@ -34,9 +34,9 @@ export const CategoryResources = () => {
     )
 
     return (
-        <main className="general-font">
+        <main className="general-font page-content">
             <h1>{category?.type}</h1>
-            <article>
+            <article className="d-flex justify-content-between flex-wrap">
                 {
                     resources.length === 0 ? <p>Uploads will appear here. Submit new learning resources to see this page filled!</p> :
                         resources.map((resource) => <Resource
