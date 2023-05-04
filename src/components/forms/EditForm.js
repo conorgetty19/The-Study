@@ -90,7 +90,7 @@ export const EditForm = () => {
     }
 
     return (
-        <main className="general-font">
+        <main className="general-font  formPage d-flex flex-column align-items-center">
             <h1>Resource Edit Form</h1>
             <ResourceForm
                 submission={submission}

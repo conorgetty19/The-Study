@@ -4,8 +4,8 @@ export const ResourceForm = ({submission, handleSubmission, updateSubmissionNumb
 
 
     return (
-        <form onSubmit={handleSubmission}>
-            <fieldset>
+        <form className="formPage-content d-flex flex-column" onSubmit={handleSubmission}>
+            <fieldset className="formField d-flex flex-column">
                 <label htmlFor="formatId">Format</label>
                 <select
                     value={submission.formatId}
@@ -21,7 +21,7 @@ export const ResourceForm = ({submission, handleSubmission, updateSubmissionNumb
                     )}
                 </select>
             </fieldset>
-            <fieldset>
+            <fieldset className="formField d-flex flex-column">
                 <label htmlFor="categoryId">Category</label>
                 <select
                     value={submission.categoryId}
@@ -37,7 +37,7 @@ export const ResourceForm = ({submission, handleSubmission, updateSubmissionNumb
                     )}
                 </select>
             </fieldset>
-            <fieldset>
+            <fieldset className="formField d-flex flex-column">
                 <label htmlFor="title">Title</label>
                 <input
                     defaultValue={submission.title}
@@ -47,7 +47,7 @@ export const ResourceForm = ({submission, handleSubmission, updateSubmissionNumb
                     placeholder="Enter a title"
                     required />
             </fieldset>
-            <fieldset>
+            <fieldset className="formField d-flex flex-column">
                 <label htmlFor="url">URL</label>
                 <input
                     defaultValue={submission.url}
@@ -57,7 +57,7 @@ export const ResourceForm = ({submission, handleSubmission, updateSubmissionNumb
                     placeholder="https://www.url.com"
                     required />
             </fieldset>
-            <fieldset>
+            <fieldset className="formField d-flex flex-column">
                 <label htmlFor="image">Image URL</label>
                 <input
                     defaultValue={submission.image}
@@ -67,19 +67,19 @@ export const ResourceForm = ({submission, handleSubmission, updateSubmissionNumb
                     placeholder="www.image.com"
                     required />
             </fieldset>
-            <fieldset>
+            <fieldset className="formField d-flex flex-column">
                 <label htmlFor="description">Description</label>
                 <textarea
                     defaultValue={submission.description}
                     onChange={updateSubmission}
-                    id="description" rows="3" cols="35"
+                    id="description" rows="2" cols="50"
                     placeholder="Type a brief description of your resource"
                     style={{ resize: 'none' }}
                     required
-                    maxLength="105"></textarea>
+                    maxLength="100"></textarea>
             </fieldset>
             <fieldset>
-                <button className="btn btn-secondary" type="submit">
+                <button className="btn btn-secondary form-button" type="submit">
                     Submit
                 </button>
             </fieldset>
