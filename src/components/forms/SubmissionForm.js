@@ -75,7 +75,7 @@ export const SubmissionForm = () => {
     }
 
     return (
-        <main className="general-font">
+        <main className="general-font formPage d-flex flex-column align-items-center">
             <h1>Upload Submission Form</h1>
             <ResourceForm 
                 submission={submission}
