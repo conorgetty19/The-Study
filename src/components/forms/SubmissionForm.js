@@ -1,5 +1,6 @@
-import { useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { ResourceForm } from "./ResourceForm"
 
 export const SubmissionForm = () => {
     const localStudyUser = localStorage.getItem("study_user")
@@ -75,75 +76,15 @@ export const SubmissionForm = () => {
 
     return (
         <main className="general-font">
-            <form onSubmit={handleSubmission}>
-                <h1>Upload Submission Form</h1>
-                <fieldset>
-                    <label htmlFor="formatId">Format</label>
-                    <select id="formatId" 
-                    required 
-                    onChange={updateSubmissionNumber}>
-                        <option value="0">Select a format</option>
-                        {formats.map(
-                            (format) => {
-                                return <option key={format.id} 
-                                value={format.id}>{format.type}</option>
-                            }
-                        )}
-                    </select>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="categoryId">Category</label>
-                    <select id="categoryId" 
-                    required 
-                    onChange={updateSubmissionNumber}>
-                        <option value="0">Select a category</option>
-                        {categories.map(
-                            (category) => {
-                                return <option key={category.id} 
-                                value={category.id}>{category.type}</option>
-                            }
-                        )}
-                    </select>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="title">Title</label>
-                    <input onChange={updateSubmission}
-                        id="title"
-                        type="text"
-                        placeholder="Enter a title" 
-                        required/>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="url">URL</label>
-                    <input onChange={updateSubmission}
-                        id="url"
-                        type="url"
-                        placeholder="https://www.url.com" 
-                        required/>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="image">Image URL</label>
-                    <input onChange={updateSubmission}
-                        id="image"
-                        type="url"
-                        placeholder="www.image.com" 
-                        required/>
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="description">Description</label>
-                    <textarea onChange={updateSubmission}
-                        id="description" rows="3" cols="35"
-                        placeholder="Type a brief description of your resource"
-                        style={{ resize: 'none' }} 
-                        required
-                        maxLength="105"></textarea>
-                </fieldset>
-                <fieldset>
-                    <button className="btn btn-secondary" type="submit">
-                        Submit
-                    </button>
-                </fieldset>
-            </form>
+            <h1>Upload Submission Form</h1>
+            <ResourceForm 
+                submission={submission}
+                handleSubmission={handleSubmission}
+                updateSubmission={updateSubmission}
+                updateSubmissionNumber={updateSubmissionNumber}
+                formats={formats}
+                categories={categories}
+                />
         </main>
     )
 }
