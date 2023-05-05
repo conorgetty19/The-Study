@@ -42,7 +42,7 @@ export const Resource = ({ id, link, creator, title, img, format, description, g
                     {format} Description
                 </button>
                 <div className="collapse show" id={`collapse${id}`} ref={collapsibleElement}>
-                    <div className="card-text small">
+                    <div className="card-text small text-white">
                         {description}
                     </div>
                 </div>
