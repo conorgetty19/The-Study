@@ -155,16 +155,10 @@ code {
 }
 
 .allUploads{
-  /* border: 3px solid red; */
   margin-top: 3.5rem;
 }
 
-.allCategories{
-  /* border: 3px solid green; */
-}
-
 .allUploads-title{
-  /* border: 3px dotted green; */
   text-align: center;
   margin-left: auto;
   margin-right: auto;
