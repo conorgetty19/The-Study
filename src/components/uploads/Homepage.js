@@ -1,14 +1,39 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Resource } from "./Resource"
+import { UploadSearch } from "./UploadSearch"
 
 export const Homepage = () => {
     const [categories, setCategories] = useState([])
-    const [uploads, setUploads] = useState([])
+    const [resources, setResources] = useState([])
+    const [formats, setFormats] = useState([])
+    const [searchTerms, setSearchTerms] = useState("")
+    const [filteredResources, setFilteredResources] = useState([])
+    const [selectedFormat, setSelectedFormat] = useState(0)
+
+    useEffect(() => {
+        let searchedResources
+        if (selectedFormat === 0) {
+          searchedResources = resources.filter(
+            (resource) =>
+              resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+              resource.description.toLowerCase().includes(searchTerms.toLowerCase())
+          );
+        } else {
+          searchedResources = resources.filter(
+            (resource) =>
+              parseInt(resource.formatId) === selectedFormat &&
+              (resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+                resource.description.toLowerCase().includes(searchTerms.toLowerCase()))
+          );
+        }
+        setFilteredResources(searchedResources)
+      }, [searchTerms, selectedFormat, resources])
+      
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/categories`)
+            fetch('http://localhost:8088/categories')
                 .then(res => res.json())
                 .then((categoriesArray) => {
                     setCategories(categoriesArray)
@@ -17,11 +42,23 @@ export const Homepage = () => {
         []
     )
 
+    useEffect(
+        () => {
+            fetch('http://localhost:8088/formats')
+                .then(res => res.json())
+                .then((formatsArray) => {
+                    setFormats(formatsArray)
+                })
+        },
+        []
+    )
+
     const getAllResources = () => {
-        fetch(`http://localhost:8088/resources`)
+        fetch('http://localhost:8088/resources')
             .then(res => res.json())
             .then((resources) => {
-                setUploads(resources)
+                setResources(resources)
+                setFilteredResources(resources)
             })
     }
 
@@ -40,19 +77,29 @@ export const Homepage = () => {
                     return <div key={category.id}><Link className="custom-text-green" to={`/category/${category.id}`} id={category.id}>Category {category.id}: {category.type}</Link><br /></div>
                 })}
             </article>
-            <article className="allUploads">
-                <h2 className="h1 allUploads-title">All Uploads</h2>
+            <article className="allResources">
+                <h2 className="h1 allResources-title">All Uploads</h2>
+                <UploadSearch setterFunction={setSearchTerms} />
+                <select value={selectedFormat} onChange={(e) => setSelectedFormat(parseInt(e.target.value))}>
+                    <option value="0">Select a format</option>
+                    {formats.map(
+                        (format) => {
+                            return <option key={format.id}
+                                value={parseInt(format.id)}>{format.type}</option>
+                        }
+                    )}
+                </select>
                 <section className=" d-flex justify-content-between flex-wrap">
                     {
-                        uploads.map((upload) => <Resource
-                            key={`upload-${upload.id}`}
-                            id={upload.id}
-                            link={upload.url}
-                            creator={upload.creatorId}
-                            title={upload.title}
-                            img={upload.image}
-                            format={upload?.format?.type}
-                            description={upload.description}
+                        filteredResources.map((resource) => <Resource
+                            key={`resource-${resource.id}`}
+                            id={resource.id}
+                            link={resource.url}
+                            creator={resource.creatorId}
+                            title={resource.title}
+                            img={resource.image}
+                            format={resource?.format?.type}
+                            description={resource.description}
                             getAllResources={getAllResources}
                         />)
                     }
