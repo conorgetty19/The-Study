@@ -154,15 +154,15 @@ code {
   height: 21rem;
 }
 
-.allUploads{
+.allResources{
   margin-top: 3.5rem;
 }
 
-.allUploads-title{
+/* .allResources-title{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 /*Upload and Edit Forms*/
 
