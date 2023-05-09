@@ -54,7 +54,7 @@ export const Homepage = () => {
     )
 
     const getAllResources = () => {
-        fetch('http://localhost:8088/resources')
+        fetch('http://localhost:8088/resources?_expand=format')
             .then(res => res.json())
             .then((resources) => {
                 setResources(resources)
