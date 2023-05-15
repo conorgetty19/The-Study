@@ -11,24 +11,26 @@ export const MyUploads = () => {
     const [filteredResources, setFilteredResources] = useState([])
     const [selectedFormat, setSelectedFormat] = useState(0)
 
+
+    //filters resources by selected format and/or search terms
     useEffect(() => {
         let searchedResources
         if (selectedFormat === 0) {
-          searchedResources = resources.filter(
-            (resource) =>
-              resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
-              resource.description.toLowerCase().includes(searchTerms.toLowerCase())
-          );
+            searchedResources = resources.filter(
+                (resource) =>
+                    resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+                    resource.description.toLowerCase().includes(searchTerms.toLowerCase())
+            );
         } else {
-          searchedResources = resources.filter(
-            (resource) =>
-              parseInt(resource.formatId) === selectedFormat &&
-              (resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
-                resource.description.toLowerCase().includes(searchTerms.toLowerCase()))
-          );
+            searchedResources = resources.filter(
+                (resource) =>
+                    parseInt(resource.formatId) === selectedFormat &&
+                    (resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+                        resource.description.toLowerCase().includes(searchTerms.toLowerCase()))
+            );
         }
         setFilteredResources(searchedResources)
-      }, [searchTerms, selectedFormat, resources])
+    }, [searchTerms, selectedFormat, resources])
 
     const getMyResources = () => {
         fetch(`http://localhost:8088/resources?_expand=format&creatorId=${studyUserObject.id}`)
@@ -39,6 +41,7 @@ export const MyUploads = () => {
             })
     }
 
+    //retrieves list of formats on render
     useEffect(
         () => {
             fetch('http://localhost:8088/formats')

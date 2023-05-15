@@ -1,6 +1,6 @@
 
-
-export const ResourceForm = ({submission, handleSubmission, updateSubmissionNumber, updateSubmission, formats, categories}) => {
+//returns fully furnished form
+export const ResourceForm = ({ submission, handleSubmission, updateSubmissionNumber, updateSubmission, formats, categories }) => {
 
 
     return (

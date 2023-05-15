@@ -1,3 +1,5 @@
+/* intend to break this down into smaller css modules */
+
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
@@ -48,21 +50,21 @@ code {
   padding: 1rem;
 }
 
-.card-img{
+.card-img {
   /* border: 3px dotted red; */
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   padding: 0.5rem;
 }
 
-.page-content{
+.page-content {
   margin-top: 3.5rem;
   margin-left: 4rem;
   height: 25rem;
 }
 
 /* Login and registration pages */
-.login-title-font{
+.login-title-font {
   font-family: 'Great Vibes', cursive;
   font-size: 4rem;
 }
@@ -81,23 +83,23 @@ code {
   width: 12rem;
 }
 
-.login{
+.login {
   height: 100vh;
   width: 100vw;
 }
 
-.login-form{
+.login-form {
   height: 37%;
   width: 100%;
   margin-top: 3rem;
 }
 
-.login-form-title{
+.login-form-title {
   margin-top: 0px;
   margin: 1rem;
 }
 
-.login-form-usernameField{
+.login-form-usernameField {
   margin-top: 0px;
   margin: 1rem;
 }
@@ -118,7 +120,7 @@ code {
   padding-top: 0.5rem;
 }
 
-.login-p{
+.login-p {
   width: 100%;
   max-height: 9rem;
   padding-right: 10vw;
@@ -134,51 +136,45 @@ code {
   margin-top: 6rem;
 }
 
-.registration-form-title{
+.registration-form-title {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.registration-form-field{
+.registration-form-field {
   width: 100%;
 }
 
-.registration-form-labelAndInput{
+.registration-form-labelAndInput {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
 }
 
 /* Home Page */
 
-.homepage-category{
+.homepage-category {
   height: 21rem;
 }
 
-.allResources{
+.allResources {
   margin-top: 3.5rem;
 }
-
-/* .allResources-title{
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-} */
 
 /*Upload and Edit Forms*/
 
-.formPage{
+.formPage {
   margin-top: 3.5rem;
 }
 
-.formPage-content{
+.formPage-content {
   min-width: 40%;
   max-width: 60%
 }
 
-.formField{
+.formField {
   margin: 0.2rem;
 }
 
-.form-button{
+.form-button {
   margin-left: 0.2rem;
 }
