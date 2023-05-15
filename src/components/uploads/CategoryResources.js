@@ -15,26 +15,29 @@ export const CategoryResources = () => {
     const [filteredResources, setFilteredResources] = useState([])
     const [selectedFormat, setSelectedFormat] = useState(0)
 
+    //filters results to display based on selected format and/or search terms
+    //does so anytime search terms, selected format, or resources list change
     useEffect(() => {
         let searchedResources
         if (selectedFormat === 0) {
-          searchedResources = resources.filter(
-            (resource) =>
-              resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
-              resource.description.toLowerCase().includes(searchTerms.toLowerCase())
-          );
+            searchedResources = resources.filter(
+                (resource) =>
+                    resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+                    resource.description.toLowerCase().includes(searchTerms.toLowerCase())
+            );
         } else {
-          searchedResources = resources.filter(
-            (resource) =>
-              parseInt(resource.formatId) === selectedFormat &&
-              (resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
-                resource.description.toLowerCase().includes(searchTerms.toLowerCase()))
-          );
+            searchedResources = resources.filter(
+                (resource) =>
+                    parseInt(resource.formatId) === selectedFormat &&
+                    (resource.title.toLowerCase().includes(searchTerms.toLowerCase()) ||
+                        resource.description.toLowerCase().includes(searchTerms.toLowerCase()))
+            );
         }
         setFilteredResources(searchedResources)
-      }, [searchTerms, selectedFormat, resources])
+    }, [searchTerms, selectedFormat, resources])
 
-      useEffect(
+    //retrieves list of formats to be used for creating select options
+    useEffect(
         () => {
             fetch('http://localhost:8088/formats')
                 .then(res => res.json())
@@ -45,6 +48,8 @@ export const CategoryResources = () => {
         []
     )
 
+    //retrieves all resources
+    //sets initial state of resources and filtered resources to be the same
     const getAllResources = () => {
         fetch(`http://localhost:8088/resources?categoryId=${categoryId}&_expand=format`)
             .then(res => res.json())
@@ -53,6 +58,8 @@ export const CategoryResources = () => {
                 setFilteredResources(resourcesArray)
             })
     }
+
+    //retrieves category that matches the url
     const getCategory = () => {
         fetch(`http://localhost:8088/categories/${categoryId}`)
             .then(res => res.json())
