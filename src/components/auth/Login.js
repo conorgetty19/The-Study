@@ -19,7 +19,6 @@ export const Login = () => {
     }
 
     //return a form and link to registration page
-    //onsubmit missing for now
     return (
         <main className="d-flex-column justify-content-around login">
             <div className="login-titleAndTag">
